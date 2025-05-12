@@ -8,19 +8,16 @@
 <body>
 	<section class="center">
 		<h1>Изображения</h1>
-
 		<h2>Элемент <code>img</code></h2>
-
 		<p>Элемент <code>img</code> внедряет изображение в текущий документ в месте определения элемента. Элемент <code>img</code> не имеет содержимого — он замещается на ходу изображением, указанным в атрибуте <code>src</code>.</p>
-		<img scr="images/aquaria.jpg">
-
+		<img scr="lab1/images/aquaria.jpg" alt="не отображается">
 		<h2>Альтернативный текст</h2>
 		<p>Атрибут <code>alt</code> предоставляет краткое описание изображения. Он содержит альтернативный текст, который отображается, если изображение не может быть выведено. Пользовательские агенты должны отображать альтернативный текст, если они не поддерживают изображения, или сконфигурированы так, чтобы не показывать изображения (отключен показ изображений).</p>
 		<img scr="lab1/images/html5-logo.svg" alt="не отображается">
 
 		<h2>Размеры изображения</h2>
 		<p>Атрибуты <code>width</code> и <code>height</code> задают размеры области изображения. Если оба атрибута не заданы, размер изображения будет определен после его полной загрузки, после чего размеры области будут изменены для размещения содержания картинки.</p>
-		<img scr="html5-logo.png">
+		<img scr="lab1/images/html5-logo.png">
 		<p>Если задан только один из атрибутов, второй размер будет высчитан в соответствие с пропорциями изображения и заданным атрибутом.</p>
 		<img scr="lab1/images/html5-logo.jpg" width="128">
 		<p>При указании обоих атрибутов ПА «впишет» изображение в область с указанными размерами.</p>
@@ -34,16 +31,15 @@
 	    src="lab1/images/mushroom.jpg"
    		srcset="lab1/images/mushroom_portrait.jpg 350w, lab1/images/mushroom_landscape.jpg 650w" 
 		sizes="(max-width: 600px) 300px, (min-width: 600px) 600px"
-	    alt="">
+	    alt="не отображается">
 		</p>
-
 		<h2>Подпись к изображению</h2>
 		<p>Для группирования любых элементов, например, изображений и подписей к ним используется элемент <code>figure</code>.
 		Он не должен быть связан непосредственно с основным содержимым документа и при его перемещении в другое место смысл текста не должен меняться. 
 		Обычно применяется для иллюстраций, фрагментов кода, схем, графиков, диаграмм и др.
 		Элемент <code>figcaption</code> содержит описание для элемента <code>figure</code>. Он должен быть первым или последним элементом в группе.</p>
 		<figure>
-		<figcaption>HTML курс</figcaption>
+		<figcaption>Картинка</figcaption>
 		<img width="150px" src="lab1/images/slon.png" alt="Картинка">
 		</figure>
 		<h2>Элемент picture</h2>
@@ -56,8 +52,8 @@
 		Затем выбранное изображение отображается в пространстве, занятом элементом <code>img</code>. 
 		</p>
 		<picture>
-		<source media="(orientation: landscape)" srcset="lab1/images/mushroom_landscape.jpg">
-   		<source media="(orientation: portrait)" srcset="lab1/images/mushroom_portrait.jpg">
+		<source media="(orientation: lab1/images/mushroom_landscape.jpg)" srcset="lab1/images/mushroom_landscape.jpg">
+   		<source media="(orientation: lab1/images/mushroom_portrait.jpg)" srcset="lab1/images/mushroom_portrait.jpg">
    		<source srcset="lab1/images/mushroom_retina.jpg 2x, lab1/images/mushroom.jpg 1x">
    		<img src="lab1/images/mushroom.jpg" alt="Сыроежка">
   		</picture>
