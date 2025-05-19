@@ -1,0 +1,32 @@
+body {
+  background-color: black; /* фон черный */
+  color: white; /* текст белый */
+  font-size: 1.5rem; /* размер шрифта */
+  line-height: 2rem; /* межстрочный интервал */
+  margin: 0;
+  padding: 20px; /* немного отступа для красоты */
+}
+
+p {
+  text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: right;
+  font-family: "Arial Black", sans-serif; /* рубленый шрифт */
+  color: red;
+  font-weight: normal;
+}
+
+em {
+  color: green;
+  font-style: italic;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
