@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление вертикального меню</title>
+    <style>
+        .menu {
+            width: 200px;
+            background: #369;
+        }
+        
+        .menu ul {
+            list-style-type: none; /* убираем маркеры списка */
+            margin: 0; /* убираем внешние отступы */
+            padding: 5px 10px; /* внутренний отступ: 5px сверху/снизу, 10px слева/справа */
+        }
+        
+        .menu li {
+            padding: 5px 0; /* внутренний отступ: 5px сверху/снизу, 0 слева/справа */
+        }
+        
+        .menu li a {
+            display: block; /* делаем элемент блочным */
+            padding: 10px; /* внутренний отступ */
+            text-transform: uppercase; /* преобразуем в верхний регистр */
+            text-decoration: none; /* убираем подчёркивание */
+            background-color: #4a6ea9; /* цвет фона */
+            color: white; /* цвет шрифта */
+        }
+        
+        .menu li a:hover {
+            background-color: #5d8acd; /* цвет фона при наведении */
+            color: #fff; /* цвет шрифта при наведении */
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Фильмы</a></li>
+            <li><a href="#">Музыка</a></li>
+            <li><a href="#">Софт</a></li>
+            <li><a href="#">Игры</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
