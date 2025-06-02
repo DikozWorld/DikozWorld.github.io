@@ -1,11 +1,12 @@
 body {
-  background: black url(bkg.png) center;
+  background-color: black;
   color: white; /* текст белый */
   font-size: 1.5rem; /* размер шрифта */
   line-height: 2rem; /* межстрочный интервал */
   margin: 0;
   padding: 20px; /* немного отступа для красоты */
 }
+
 
 p {
   text-align: right;
