@@ -1,5 +1,5 @@
 body {
-  background-color: black url("/lab3/bkg.png") center;
+  background-color: black url("bkg.png") center;
   color: white; /* текст белый */
   font-size: 1.5rem; /* размер шрифта */
   line-height: 2rem; /* межстрочный интервал */
