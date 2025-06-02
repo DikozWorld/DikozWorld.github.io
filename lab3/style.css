@@ -23,6 +23,10 @@ em {
   font-style: italic;
 }
 
+strong {
+  font-family:  "Caveat", cursive;
+}
+
 .wrapper {
   max-width: 960px;
   margin-left: auto;
