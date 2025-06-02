@@ -14,12 +14,12 @@ p {
 h1, h2, h3, h4, h5, h6 {
   text-align: right;
   font-family: "Roboto", sans-serif;
-  color: red;
+  color:  #2E9AFF;
   font-weight: normal;
 }
 
 em {
-  color: green;
+  color: #6ACFC7;
   font-style: italic;
 }
 
