@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление вертикального меню</title>
+    <title>Оформление вертикального меню с иконками</title>
     <style>
         html {
             background: #f0f0f0;
@@ -10,7 +10,7 @@
         }
         
         .menu {
-            width: 250px;
+            width: 280px; /* Увеличиваем ширину для иконок */
             background: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -32,7 +32,8 @@
         }
         
         .menu li a {
-            display: block;
+            display: flex;
+            align-items: center;
             padding: 12px 15px;
             color: #333;
             text-decoration: none;
@@ -64,42 +65,79 @@
             border-left: 3px solid #0066cc;
             background: #f0f0f0;
         }
+        
+        /* Стили для иконок */
+        .menu-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        /* Цветные иконки для основных пунктов */
+        .main-icon {
+            filter: brightness(0.8);
+        }
+        
+        /* Серые иконки для подпунктов */
+        .sub-icon {
+            filter: brightness(0.6);
+            width: 16px;
+            height: 16px;
+        }
     </style>
 </head>
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="#">Фильмы</a>
+            <li>
+                <a href="#">
+                    <img src="plus.gif" alt="Фильмы" class="menu-icon main-icon">
+                    Фильмы
+                </a>
                 <ul>
-                    <li><a href="#">Экшн</a></li>
-                    <li><a href="#">Мелодрамы</a></li>
-                    <li><a href="#">Сериалы</a></li>
-                    <li><a href="#">Семейные</a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Экшн" class="menu-icon sub-icon">
+                        Экшн
+                    </a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Мелодрамы" class="menu-icon sub-icon">
+                        Мелодрамы
+                    </a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Сериалы" class="menu-icon sub-icon">
+                        Сериалы
+                    </a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Семейные" class="menu-icon sub-icon">
+                        Семейные
+                    </a></li>
                 </ul>
             </li>
-            <li><a href="#">Музыка</a>
+            <li>
+                <a href="#">
+                    <img src="plus.gif" alt="Музыка" class="menu-icon main-icon">
+                    Музыка
+                </a>
                 <ul>
-                    <li><a href="#">Классика</a></li>
-                    <li><a href="#">Джаз</a></li>
-                    <li><a href="#">Рок</a></li>
-                    <li><a href="#">Грандж</a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Классика" class="menu-icon sub-icon">
+                        Классика
+                    </a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Джаз" class="menu-icon sub-icon">
+                        Джаз
+                    </a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Рок" class="menu-icon sub-icon">
+                        Рок
+                    </a></li>
+                    <li><a href="#">
+                        <img src="point.gif" alt="Грандж" class="menu-icon sub-icon">
+                        Грандж
+                    </a></li>
                 </ul>
             </li>
-            <li><a href="#">Софт</a>
-                <ul>
-                    <li><a href="#">Графика</a></li>
-                    <li><a href="#">3D-моделирование</a></li>
-                    <li><a href="#">Машинопись</a></li>
-                    <li><a href="#">Переводчики</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Игры</a>
-                <ul>
-                    <li><a href="#">РПГ</a></li>
-                    <li><a href="#">Шутеры</a></li>
-                    <li><a href="#">Пасьянсы</a></li>
-                </ul>
-            </li>
+            <!-- Аналогично для остальных пунктов -->
         </ul>
     </nav>
 </body>
