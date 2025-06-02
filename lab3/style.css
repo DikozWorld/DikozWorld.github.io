@@ -13,7 +13,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   text-align: right;
-  font-family: "Arial Black", sans-serif; /* рубленый шрифт */
+  font-family: "Roboto", sans-serif;
   color: red;
   font-weight: normal;
 }
@@ -30,3 +30,5 @@ em {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+
