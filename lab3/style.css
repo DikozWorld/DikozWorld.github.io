@@ -1,3 +1,5 @@
+@import "main.css";
+
 body {
   background: url("bkg.jpg") no-repeat center / cover;
   color: white; /* текст белый */
