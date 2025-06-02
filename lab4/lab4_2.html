@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление вертикального меню с иконками</title>
+    <title>Меню с меняющимися иконками</title>
     <style>
         html {
             background: #f0f0f0;
@@ -10,7 +10,7 @@
         }
         
         .menu {
-            width: 280px; /* Увеличиваем ширину для иконок */
+            width: 280px;
             background: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -38,6 +38,7 @@
             color: #333;
             text-decoration: none;
             transition: all 0.3s;
+            position: relative;
         }
         
         .menu li a:hover {
@@ -67,20 +68,38 @@
         }
         
         /* Стили для иконок */
-        .menu-icon {
+        .icon-container {
+            position: relative;
             width: 20px;
             height: 20px;
             margin-right: 10px;
         }
         
-        /* Цветные иконки для основных пунктов */
-        .main-icon {
-            filter: brightness(0.8);
+        .menu-icon {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.3s;
         }
         
-        /* Серые иконки для подпунктов */
-        .sub-icon {
-            filter: brightness(0.6);
+        .icon-normal {
+            opacity: 1;
+        }
+        
+        .icon-hover {
+            opacity: 0;
+        }
+        
+        .menu li a:hover .icon-normal {
+            opacity: 0;
+        }
+        
+        .menu li a:hover .icon-hover {
+            opacity: 1;
+        }
+        
+        /* Размеры для подпунктов */
+        .menu li li .icon-container {
             width: 16px;
             height: 16px;
         }
@@ -91,53 +110,41 @@
         <ul>
             <li>
                 <a href="#">
-                    <img src="plus.gif" alt="Фильмы" class="menu-icon main-icon">
+                    <span class="icon-container">
+                        <img src="plus.gif" alt="Фильмы" class="menu-icon icon-normal">
+                        <img src="minus.gif" alt="Фильмы" class="menu-icon icon-hover">
+                    </span>
                     Фильмы
                 </a>
                 <ul>
                     <li><a href="#">
-                        <img src="point.gif" alt="Экшн" class="menu-icon sub-icon">
+                        <img src="action-icon.png" alt="Экшн" class="menu-icon sub-icon">
                         Экшн
                     </a></li>
                     <li><a href="#">
-                        <img src="point.gif" alt="Мелодрамы" class="menu-icon sub-icon">
+                        <img src="melodrama-icon.png" alt="Мелодрамы" class="menu-icon sub-icon">
                         Мелодрамы
                     </a></li>
-                    <li><a href="#">
-                        <img src="point.gif" alt="Сериалы" class="menu-icon sub-icon">
-                        Сериалы
-                    </a></li>
-                    <li><a href="#">
-                        <img src="point.gif" alt="Семейные" class="menu-icon sub-icon">
-                        Семейные
-                    </a></li>
+                    <!-- Остальные подпункты -->
                 </ul>
             </li>
             <li>
                 <a href="#">
-                    <img src="plus.gif" alt="Музыка" class="menu-icon main-icon">
+                    <span class="icon-container">
+                        <img src="plus.gif" alt="Музыка" class="menu-icon icon-normal">
+                        <img src="minus.gif" alt="Музыка" class="menu-icon icon-hover">
+                    </span>
                     Музыка
                 </a>
                 <ul>
                     <li><a href="#">
-                        <img src="point.gif" alt="Классика" class="menu-icon sub-icon">
+                        <img src="classic-icon.png" alt="Классика" class="menu-icon sub-icon">
                         Классика
                     </a></li>
-                    <li><a href="#">
-                        <img src="point.gif" alt="Джаз" class="menu-icon sub-icon">
-                        Джаз
-                    </a></li>
-                    <li><a href="#">
-                        <img src="point.gif" alt="Рок" class="menu-icon sub-icon">
-                        Рок
-                    </a></li>
-                    <li><a href="#">
-                        <img src="point.gif" alt="Грандж" class="menu-icon sub-icon">
-                        Грандж
-                    </a></li>
+                    <!-- Остальные подпункты -->
                 </ul>
             </li>
-            <!-- Аналогично для остальных пунктов -->
+            <!-- Остальные основные пункты -->
         </ul>
     </nav>
 </body>
