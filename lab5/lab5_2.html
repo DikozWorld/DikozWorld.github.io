@@ -71,30 +71,12 @@ body {
     font-size: 16px;
   }
 /* Вариант 3: Flexbox */
-.flex-container {
-  display:flex;
-  justify-content:center;
-}
-.flex-wrapper {
-   width:100%;
-}
-.flex-column {
-   box-sizing:border-box;
-   padding:10px;
-}
-#left-flex {
-   width:200px;
-   background:#ccf;
-}
-#center-flex {
-   flex-grow:1;
-   min-width:600px;
-   background:#cfc;
-}
-#right-flex {
-   width:200px;
-   background:#fcc;
-}
+  #flex .container {
+     display: flex;
+        }
+        #flex .center {
+            flex: 1;
+        }
 
 /* Вариант 4: CSS Grid */
 .grid-container {
