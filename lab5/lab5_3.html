@@ -3,52 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Использование flex при построении колонок</title>
+    <title>Использование различных методов построения колонок</title>
     <style type="text/css">
-        * {
-            box-sizing: border-box; /* Учитываем padding и border в ширине */
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            display: flex; /* Включаем Flexbox для body */
-            min-height: 100vh; /* Минимальная высота — весь экран */
-        }
-        
-        #left {
+        /* Общие стили для всех колонок */
+        .left {
             background: #ccf;
-            width: 200px; /* Фиксированная ширина */
-            padding: 10px;
+            width: 200px;
+            box-sizing: border-box;
         }
-        
-        #right {
+        .right {
             background: #fcc;
-            width: 200px; /* Фиксированная ширина */
-            padding: 10px;
+            width: 200px;
+            box-sizing: border-box;
+        }
+        .center {
+            background: #cfc;
+            box-sizing: border-box;
         }
         
-        #center {
-            background: #cfc;
-            flex-grow: 1; /* Занимает всё оставшееся пространство */
+        /* Стили для разделов */
+        section {
+            margin-bottom: 30px;
             padding: 10px;
+            border: 1px solid #ccc;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        
+        /* 1. Вариант с float */
+        #float .left {
+            float: left;
+        }
+        #float .right {
+            float: right;
+        }
+        #float .center {
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        #float::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* 2. Вариант с inline-block */
+        #inline-block .wrapper {
+            width: 1000px; /* 200 + 600 + 200 */
+            margin: 0 auto;
+            font-size: 0; /* Убираем промежутки между элементами */
+        }
+        #inline-block .center {
+            width: 600px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px; /* Восстанавливаем размер шрифта */
+        }
+        #inline-block .left, 
+        #inline-block .right {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px; /* Восстанавливаем размер шрифта */
+        }
+        
+        /* 3. Вариант с flex */
+        #flex .container {
+            display: flex;
+        }
+        #flex .center {
+            flex: 1;
+        }
+        
+        /* 4. Вариант с grid */
+        #grid .container {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
         }
     </style>
 </head>
 <body>
-    <div id="left">left<br>left<br>left<br>left<br>left</div>
-    <div id="center">
-        center text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
-    </div>
-    <div id="right">right<br>right<br>right<br>right</div>
+    <h1>Различные методы построения колонок</h1>
+    
+    <!-- 1. Вариант с float -->
+    <section id="float">
+        <h2>1. Использование float</h2>
+        <div class="left">left<br>left<br>left<br>left<br>left</div>
+        <div class="right">right<br>right<br>right<br>right</div>
+        <div class="center">
+            center text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+        </div>
+    </section>
+    
+    <!-- 2. Вариант с inline-block -->
+    <section id="inline-block">
+        <h2>2. Использование inline-block</h2>
+        <div class="wrapper">
+            <div class="left">left<br>left<br>left<br>left<br>left</div><!--
+            --><div class="center">
+                center text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            </div><!--
+            --><div class="right">right<br>right<br>right<br>right</div>
+        </div>
+    </section>
+    
+    <!-- 3. Вариант с flex -->
+    <section id="flex">
+        <h2>3. Использование flex</h2>
+        <div class="container">
+            <div class="left">left<br>left<br>left<br>left<br>left</div>
+            <div class="center">
+                center text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            </div>
+            <div class="right">right<br>right<br>right<br>right</div>
+        </div>
+    </section>
+    
+    <!-- 4. Вариант с grid -->
+    <section id="grid">
+        <h2>4. Использование grid</h2>
+        <div class="container">
+            <div class="left">left<br>left<br>left<br>left<br>left</div>
+            <div class="center">
+                center text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+                text text text text text text text text text text text text text text text text text text text text text text text text text text text text text text
+            </div>
+            <div class="right">right<br>right<br>right<br>right</div>
+        </div>
+    </section>
 </body>
 </html>
