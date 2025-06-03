@@ -5,18 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Разные способы построения колонок</title>
 <style>
-/* Общие стили для всех вариантов */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
 }
 
-/* --- Вариант 1: float --- */
+/* Вариант 1 */
 .float-container {
   margin-bottom: 40px;
 }
 .float-wrapper {
-  overflow: hidden; /* чтобы контейнер обтекался */
+  overflow: hidden;
 }
 .float-column {
   float: left;
@@ -29,7 +28,7 @@ body {
 }
 #center-float {
   width: calc(100% - 200px - 200px);
-  min-width: 600px; /* минимальная ширина для корректной работы */
+  min-width: 600px;
   background-color: #cfc;
 }
 #right-float {
@@ -37,9 +36,9 @@ body {
   background-color: #fcc;
 }
 
-/* --- Вариант 2: inline-block --- */
+/* Вариант 2: */
 .inline-block-container {
-  font-size:0; /* убираем промежутки между inline-block */
+  font-size:0;
 }
 .inline-column {
   display:inline-block;
@@ -52,7 +51,7 @@ body {
 }
 #center-inline {
   width:600px;
-  min-width:600px; /* чтобы не сжималось */
+  min-width:600px;
   background:#cfc;
 }
 #right-inline {
@@ -60,13 +59,13 @@ body {
   background:#fcc;
 }
 
-/* --- Вариант 3: Flexbox --- */
+/* Вариант 3: Flexbox */
 .flex-container {
   display:flex;
-  justify-content:center; /* по желанию центрировать весь блок */
+  justify-content:center;
 }
 .flex-wrapper {
-   width:100%; /* или задайте фиксированную ширину, если нужно */
+   width:100%;
 }
 .flex-column {
    box-sizing:border-box;
@@ -77,8 +76,8 @@ body {
    background:#ccf;
 }
 #center-flex {
-   flex-grow:1; /* занимает всё оставшееся место */
-   min-width:600px; /* минимальная ширина для центра */
+   flex-grow:1;
+   min-width:600px;
    background:#cfc;
 }
 #right-flex {
@@ -86,16 +85,15 @@ body {
    background:#fcc;
 }
 
-/* --- Вариант 4: CSS Grid --- */
+/* Вариант 4: CSS Grid */
 .grid-container {
    display:grid;
    grid-template-columns:
      [left]200px
      [center]auto
      [right]200px; 
-   gap:0; /* без промежутков между колонками */
+   gap:0;
 }
-/* Можно задать отдельные стили для ячеек, если нужно */
 
 </style>
 </head>
