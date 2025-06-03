@@ -37,39 +37,39 @@ body {
 }
 
 /* Вариант 2: inline-block */
-        * {
-            box-sizing: border-box;
-        }
+* {
+  box-sizing: border-box;
+}
 
-        .wrapper {
-            width: 1000px; /* 200px (left) + 600px (center) + 200px (right) */
-            margin: 0 auto; /* Центрирование */
-            font-size: 0; /* Убираем пробелы между inline-block */
-        }
+  .wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 0;
+  }
 
-        #left {
-            background: #ccf;
-            width: 200px;
-            display: inline-block;
-            vertical-align: top;
-            font-size: 16px; /* Возвращаем размер шрифта */
-        }
+  #left {
+     background: #ccf;
+     width: 200px;
+     display: inline-block;
+     vertical-align: top;
+     font-size: 16px;
+    }
+    
+  #right {
+    background: #fcc;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+  }
 
-        #right {
-            background: #fcc;
-            width: 200px;
-            display: inline-block;
-            vertical-align: top;
-            font-size: 16px;
-        }
-
-        #center {
-            background: #cfc;
-            width: 600px;
-            display: inline-block;
-            vertical-align: top;
-            font-size: 16px;
-        }
+  #center {
+    background: #cfc;
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+  }
 /* Вариант 3: Flexbox */
 .flex-container {
   display:flex;
@@ -120,13 +120,10 @@ body {
 </div>
 
 <h2>Вариант с inline-block</h2>
-    <div class="wrapper">
-        <div id="left">left<br>left<br>left<br>left<br>left</div>
-        <div id="center">
-            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.
-        </div>
-        <div id="right">right<br>right<br>right<br>right</div>
-    </div>
+<div class="wrapper">
+<div id="left">left<br>left<br>left<br>left<br>left</div>
+<div id="center">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.</div>
+<div id="right">right<br>right<br>right<br>right</div></div>
 
 <h2>Вариант с Flexbox</h2>
 <div class="flex-container">
