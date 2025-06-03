@@ -2,45 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Раскрывающееся меню с Font Awesome</title>
-    <!-- Подключаем Font Awesome -->
+    <title>Меню с фиксированными иконками</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html {
             background: #f0f0f0;
             font-family: Arial, sans-serif;
         }
-        
         .menu {
             width: 200px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        
         .menu ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        
         .menu li {
             position: relative;
             border-bottom: 1px solid #e0e0e0;
         }
-        
         .menu li a {
             display: block;
             padding: 10px 15px 10px 35px;
             color: #333;
             text-decoration: none;
-            transition: background 0.3s;
         }
-        
         .menu li a:hover {
             background: #f5f5f5;
         }
-        
-        /* Иконки через Font Awesome */
+        /* Фиксированные иконки */
         .menu li > a::before {
             content: "\f0fe"; /* square-plus */
             font-family: "Font Awesome 6 Free";
@@ -49,26 +41,20 @@
             left: 10px;
             top: 50%;
             transform: translateY(-50%);
+            width: 16px;
+            text-align: center;
         }
-        
-        /* Иконка "square-minus" при наведении */
         .menu li:hover > a::before {
             content: "\f146"; /* square-minus */
         }
-        
-        /* Иконка "circle-dot" для подпунктов */
         .menu li li a::before {
             content: "\f192"; /* circle-dot */
             left: 20px;
         }
-        
-        /* Скрытое подменю */
         .menu li ul {
             display: none;
             background: #f8f8f8;
         }
-        
-        /* Раскрытие подменю при наведении */
         .menu li:hover ul {
             display: block;
         }
@@ -77,30 +63,6 @@
 <body>
     <nav class="menu">
         <ul>
-            <li><a href="#">Фильмы</a>
-                <ul>
-                    <li><a href="#">Экшн</a></li>
-                    <li><a href="#">Мелодрамы</a></li>
-                    <li><a href="#">Сериалы</a></li>
-                    <li><a href="#">Семейные</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Музыка</a>
-                <ul>
-                    <li><a href="#">Классика</a></li>
-                    <li><a href="#">Джаз</a></li>
-                    <li><a href="#">Рок</a></li>
-                    <li><a href="#">Грандж</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Софт</a>
-                <ul>
-                    <li><a href="#">Графика</a></li>
-                    <li><a href="#">3D-моделирование</a></li>
-                    <li><a href="#">Машинопись</a></li>
-                    <li><a href="#">Переводчики</a></li>
-                </ul>
-            </li>
             <li><a href="#">Игры</a>
                 <ul>
                     <li><a href="#">РПГ</a></li>
