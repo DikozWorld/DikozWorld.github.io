@@ -1,127 +1,134 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Разные способы построения колонок</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
-/* Вариант 1: float */
-.float-container {
-  margin-bottom: 40px;
-}
-.float-wrapper {
-  overflow: hidden;
-}
-.float-column {
-  float: left;
-  box-sizing: border-box;
-  padding: 10px;
-}
-#left-float {
-  width: 200px;
-  background-color: #ccf;
-}
-#center-float {
-  width: calc(100% - 200px - 200px);
-  min-width: 600px;
-  background-color: #cfc;
-}
-#right-float {
-  width: 200px;
-  background-color: #fcc;
-}
-
-/* Вариант 2: inline-block */
-* {
-  box-sizing: border-box;
-}
-
-  .wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    font-size: 0;
-  }
-
-  #left {
-     background: #ccf;
-     width: 200px;
-     display: inline-block;
-     vertical-align: top;
-     font-size: 16px;
-    }
-    
-  #right {
-    background: #fcc;
-    width: 200px;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 16px;
-  }
-
-  #center {
-    background: #cfc;
-    width: 600px;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 16px;
-  }
-/* Вариант 3: Flexbox */
-  #flex .container {
-     display: flex;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Использование различных методов построения колонок</title>
+    <style type="text/css">
+        /* Общие стили для всех колонок */
+        .left {
+            background: #ccf;
+            width: 200px;
+            box-sizing: border-box;
+        }
+        .right {
+            background: #fcc;
+            width: 200px;
+            box-sizing: border-box;
+        }
+        .center {
+            background: #cfc;
+            box-sizing: border-box;
+        }
+        
+        /* Стили для разделов */
+        section {
+            margin-bottom: 30px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        
+        /* 1. Вариант с float */
+        #float .left {
+            float: left;
+        }
+        #float .right {
+            float: right;
+        }
+        #float .center {
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+        #float::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* 2. Вариант с inline-block */
+        #inline-block .wrapper {
+            width: 1000px; /* 200 + 600 + 200 */
+            margin: 0 auto;
+            font-size: 0; /* Убираем промежутки между элементами */
+        }
+        #inline-block .center {
+            width: 600px;
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px; /* Восстанавливаем размер шрифта */
+        }
+        #inline-block .left, 
+        #inline-block .right {
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px; /* Восстанавливаем размер шрифта */
+        }
+        
+        /* 3. Вариант с flex */
+        #flex .container {
+            display: flex;
         }
         #flex .center {
             flex: 1;
         }
-
-/* Вариант 4: CSS Grid */
-.grid-container {
-   display:grid;
-   grid-template-columns:
-     [left]200px
-     [center]auto
-     [right]200px; 
-   gap:0;
-}
-
-</style>
+        
+        /* 4. Вариант с grid */
+        #grid .container {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+        }
+    </style>
 </head>
 <body>
-
-<h2>Вариант с float</h2>
-<div class="float-container">
-<div class="float-wrapper">
-<div id="left-float" class="float-column">left<br>left<br>left<br>left<br>left</div>
-<div id="center-float" class="float-column">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет?</div>
-<div id="right-float" class="float-column">right<br>right<br>right<br>right</div>
-</div>
-</div>
-
-<h2>Вариант с inline-block</h2>
-<div class="wrapper">
-<div id="left">left<br>left<br>left<br>left<br>left</div>
-<div id="center">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.</div>
-<div id="right">right<br>right<br>right<br>right</div></div>
-
-<h2>Вариант с Flexbox</h2>
-<div class="flex-container">
-<div class="flex-wrapper">
-<div id="left-flex" class="flex-column">left<br>left<br>left<br>left<br>left</div>
-<div id="center-flex" class="flex-column">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum.</div>
-<div id="right-flex" class="flex-column">right<br>right<br>right<br>right</div>
-</div>
-</div>
-
-<h2>Вариант с CSS Grid</h2>
-<div class="grid-container">
-<div style="background:#ccf;">left (grid)</div>
-<div style="background:#cfc;">center (grid)</div>
-<div style="background:#fcc;">right (grid)</div>
-</div>
-
+    <h1>Различные методы построения колонок</h1>
+    
+    <!-- 1. Вариант с float -->
+    <section id="float">
+        <h2>1. Использование float</h2>
+        <div class="left">left<br>left<br>left<br>left<br>left</div>
+        <div class="right">right<br>right<br>right<br>right</div>
+        <div class="center">
+            Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.
+        </div>
+    </section>
+    
+    <!-- 2. Вариант с inline-block -->
+    <section id="inline-block">
+        <h2>2. Использование inline-block</h2>
+        <div class="wrapper">
+            <div class="left">left<br>left<br>left<br>left<br>left</div><!--
+            --><div class="center">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.
+            </div><!--
+            --><div class="right">right<br>right<br>right<br>right</div>
+        </div>
+    </section>
+    
+    <!-- 3. Вариант с flex -->
+    <section id="flex">
+        <h2>3. Использование flex</h2>
+        <div class="container">
+            <div class="left">left<br>left<br>left<br>left<br>left</div>
+            <div class="center">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.
+            </div>
+            <div class="right">right<br>right<br>right<br>right</div>
+        </div>
+    </section>
+    
+    <!-- 4. Вариант с grid -->
+    <section id="grid">
+        <h2>4. Использование grid</h2>
+        <div class="container">
+            <div class="left">left<br>left<br>left<br>left<br>left</div>
+            <div class="center">
+                Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Составитель вдали наш предупредила вскоре, гор алфавит свое текста жизни великий одна семантика она, до пор эта дал ты имени свою злых рекламных он о. Дорогу коварных строчка курсивных толку всемогущая, жизни гор, рыбного, своего ipsum проектах переписали. Продолжил сих жизни щеке рукописи великий если маленькая себя, несколько использовало города взгляд ipsum своего, образ заглавных решила домах. Это если своих грамматики, власти текста над точках речью рукописи рот одна на берегу пустился ipsum, скатился ведущими живет имеет? Океана, страну о продолжил всеми но ее проектах напоивший на берегу даже, реторический назад которое.
+            </div>
+            <div class="right">right<br>right<br>right<br>right</div>
+        </div>
+    </section>
 </body>
 </html>
