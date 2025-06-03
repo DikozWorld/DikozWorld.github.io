@@ -40,7 +40,6 @@
             background: #f5f5f5;
         }
         
-        /* Подменю как часть потока (не absolute) */
         .menu li ul {
             max-height: 0;
             overflow: hidden;
@@ -49,7 +48,7 @@
         }
         
         .menu li:hover ul {
-            max-height: 500px; /* Достаточно большое значение для анимации */
+            max-height: 500px;
         }
         
         .menu li li a {
@@ -57,7 +56,6 @@
             border-bottom: 1px solid #e0e0e0;
         }
         
-        /* Иконки Font Awesome */
         .menu li > a::before {
             font-family: "Font Awesome 6 Free";
             content: "\f0fe"; /* square-plus (закрытый) */
@@ -76,7 +74,6 @@
             margin-right: 10px;
         }
         
-        /* Стили для спрайта (замените на свои) */
         .menu li > a::after {
             content: "";
             display: inline-block;
