@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Оформление вертикального меню</title>
+    <title>Меню с плавным раскрытием</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         html {
@@ -27,36 +27,34 @@
             position: relative;
         }
         
-        .menu li a {
+        .menu li > a {
             display: block;
             padding: 10px 15px;
             color: #333;
             text-decoration: none;
             border-bottom: 1px solid #eee;
+            transition: background 0.3s;
         }
         
-        .menu li a:hover {
+        .menu li > a:hover {
             background: #f5f5f5;
         }
         
-        /* Подменю раскрывается снизу */
+        /* Подменю как часть потока (не absolute) */
         .menu li ul {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 100%;
-            width: 100%;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: #f9f9f9;
         }
         
         .menu li:hover ul {
-            display: block;
+            max-height: 500px; /* Достаточно большое значение для анимации */
         }
         
-        .menu li li {
-            border-bottom: 1px solid #eee;
+        .menu li li a {
+            padding: 8px 15px 8px 25px;
+            border-bottom: 1px solid #e0e0e0;
         }
         
         /* Иконки Font Awesome */
@@ -72,26 +70,22 @@
         }
         
         .menu li li a::before {
-            content: "\f111"; /* circle-dot (простой элемент) */
+            content: "\f111"; /* circle-dot */
             font-size: 0.6em;
             vertical-align: middle;
+            margin-right: 10px;
         }
         
-        /* CSS-спрайт (замените на свой) */
-        .menu li a::after {
+        /* Стили для спрайта (замените на свои) */
+        .menu li > a::after {
             content: "";
             display: inline-block;
             width: 20px;
             height: 20px;
-            background: url('sprite.png') no-repeat;
+            background: #ddd;
             float: right;
+            border-radius: 3px;
         }
-        
-        /* Пример позиций в спрайте */
-        .menu li:nth-child(1) a::after { background-position: 0 0; }
-        .menu li:nth-child(2) a::after { background-position: 0 -20px; }
-        .menu li:nth-child(3) a::after { background-position: 0 -40px; }
-        .menu li:nth-child(4) a::after { background-position: 0 -60px; }
     </style>
 </head>
 <body>
