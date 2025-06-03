@@ -14,6 +14,7 @@
             width: 200px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
         }
         
         .menu ul {
@@ -38,14 +39,16 @@
             background: #f5f5f5;
         }
         
+        /* Подменю раскрывается снизу */
         .menu li ul {
             display: none;
             position: absolute;
-            left: 100%;
-            top: 0;
-            width: 200px;
+            left: 0;
+            top: 100%;
+            width: 100%;
             background: #fff;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
         }
         
         .menu li:hover ul {
@@ -74,7 +77,7 @@
             vertical-align: middle;
         }
         
-        /* CSS-спрайт (пример, замените на свои изображения) */
+        /* CSS-спрайт (замените на свой) */
         .menu li a::after {
             content: "";
             display: inline-block;
@@ -84,7 +87,7 @@
             float: right;
         }
         
-        /* Позиции в спрайте (пример) */
+        /* Пример позиций в спрайте */
         .menu li:nth-child(1) a::after { background-position: 0 0; }
         .menu li:nth-child(2) a::after { background-position: 0 -20px; }
         .menu li:nth-child(3) a::after { background-position: 0 -40px; }
